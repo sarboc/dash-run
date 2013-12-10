@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20131209232735) do
     t.string   "email"
     t.float    "contribution"
     t.string   "note"
-    t.integer  "run_id"
+    t.integer  "thing_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

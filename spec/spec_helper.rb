@@ -35,4 +35,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Allow focus for tests
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
 end
