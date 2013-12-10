@@ -5,6 +5,7 @@ class CreateSupporters < ActiveRecord::Migration
       t.string :email
       t.float :contribution
       t.string :note
+      t.references :run
       t.timestamps
     end
   end

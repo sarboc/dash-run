@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Supporter do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "should belong to a run"
 end
