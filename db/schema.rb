@@ -13,7 +13,17 @@
 
 ActiveRecord::Schema.define(:version => 20131209232735) do
 
-  create_table "runs", :force => true do |t|
+  create_table "supporters", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.float    "contribution"
+    t.string   "note"
+    t.integer  "run_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "things", :force => true do |t|
     t.string   "admin_url"
     t.string   "public_url"
     t.datetime "time"
@@ -24,19 +34,10 @@ ActiveRecord::Schema.define(:version => 20131209232735) do
     t.string   "title"
     t.string   "description"
     t.float    "min_amount"
-    t.integer  "total_contributors"
-    t.float    "total_contributions"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
-  create_table "supporters", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.float    "contribution"
-    t.string   "note"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "total_contributors",  :default => 0
+    t.float    "total_contributions", :default => 0.0
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
 end
