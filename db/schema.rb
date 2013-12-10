@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20131209232735) do
 
-  create_table "supporters", :force => true do |t|
+  create_table "contributors", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.float    "contribution"
