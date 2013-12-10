@@ -78,6 +78,8 @@ GEM
     hike (1.2.3)
     htmlentities (4.3.1)
     i18n (0.6.9)
+    i18n-js (2.1.2)
+      i18n
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   figaro
   haml-rails
   haml_coffee_assets
+  i18n-js
   jquery-rails
   konacha
   nyan-cat-formatter
