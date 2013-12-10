@@ -11,8 +11,8 @@ class CreateRuns < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.float :min_amount
-      t.integer :total_contributors
-      t.float :total_contributions
+      t.integer :total_contributors, default: 0
+      t.float :total_contributions, default: 0
       t.timestamps
     end
   end
