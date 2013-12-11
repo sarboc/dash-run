@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter do
     respond_to do |format|
-      format.html { render_frontend and return false }
+      format.html { index and return false }
       format.json { render :json }
     end
     # if request.xhr?
@@ -15,8 +15,7 @@ class ApplicationController < ActionController::Base
     # end
   end
 
-  private
-  def render_frontend
+  def index
     render text: '', layout: true
   end
 end

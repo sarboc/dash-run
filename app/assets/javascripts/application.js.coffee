@@ -15,10 +15,12 @@
 #= require underscore-min.js
 #= require backbone.min.js
 #= require bootstrap.min.js
+#= require page
 #= require i18n
-#= require_tree ./app
 #= require_tree ./app/templates
-#= require_tree .
+#= require app/app
+#= require app/view
+#= require_tree ./app
 #= require_self
 
 $ ->
