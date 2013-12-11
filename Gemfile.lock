@@ -92,6 +92,7 @@ GEM
       colorize
       railties (>= 3.1, < 5)
       sprockets
+    konacha-chai-matchers (0.1.5)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -215,6 +216,7 @@ DEPENDENCIES
   i18n-js
   jquery-rails
   konacha
+  konacha-chai-matchers
   nyan-cat-formatter
   pg
   pry
