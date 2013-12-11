@@ -41,5 +41,4 @@ group :development, :test do
   gem 'quiet_assets'
   gem "nyan-cat-formatter"
   gem 'konacha'
-  gem 'konacha-chai-matchers'
 end

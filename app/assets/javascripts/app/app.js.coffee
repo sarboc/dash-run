@@ -4,9 +4,14 @@ window.App =
   Views: {}
 
   start: ->
-    console.log "This thing works"
+    console.log "App starting..."
     page '/', ->
       console.log "homepage"
+
+    page '/new', ->
+      @newThing = new App.Views.NewThing
+        app: @
+      .render()
 
     page '/a/:user', ->
       console.log "admin page"

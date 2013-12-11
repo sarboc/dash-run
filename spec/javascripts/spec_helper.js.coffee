@@ -1,8 +1,13 @@
 # Require the appropriate asset-pipeline files:
 #= require application
-#= require sinon
-#= require chai-changes
-#= require js-factories
+#= require sinon-chai
 #= require chai-backbone
 #= require chai-jquery
-#= require_tree ./support
+#= require chai-json
+
+
+
+# Konacha.mochaOptions.ignoreLeaks = true
+
+# beforeEach ->
+#   window.page = $("#konacha")
