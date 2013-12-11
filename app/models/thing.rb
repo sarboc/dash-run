@@ -1,16 +1,19 @@
 class Thing < ActiveRecord::Base
-  attr_accessible :time, :name, :email
+  attr_accessible
+  attr_readonly :admin_url, :public_url
 
   has_many :contributors
 
-  validates :admin_url, presence: true
-  validates :public_url, presence: true
+  validates :admin_url, presence: true, on: :update
+  validates :public_url, presence: true, on: :update
   validates :time, presence: true
-  validates :name, presence: true
-  validates :email, presence: true
+  validates :admin_name, presence: true
+  validates :admin_email, presence: true
+  validates :title, presence: true
+  validates :min_contribution, presence: true
 
   before_create :add_urls
-  before_save :validate_email
+  before_save :validate_admin_email
 
   def add_urls
     self.admin_url = SecureRandom.hex(32)
@@ -27,9 +30,10 @@ class Thing < ActiveRecord::Base
 
   end
 
-  def validated_email
-    unless self.email.match(/(^\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z$)/i)[0] == self.email
-      errors.add(:email, "That is not a valid email address!")
+  def validate_admin_email
+    admin_email = self.admin_email.match(/(^\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z$)/i)
+    unless admin_email && admin_email[0] == self.admin_email
+      errors.add(:admin_email, "#{ I18n.t "errors.invalid_email"}")
     end
   end
 

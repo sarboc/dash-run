@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20131209232735) do
     t.string   "venmo_id"
     t.string   "title"
     t.string   "description"
-    t.float    "min_amount"
+    t.float    "min_contribution"
     t.integer  "total_contributors",  :default => 0
     t.float    "total_contributions", :default => 0.0
     t.datetime "created_at",                           :null => false

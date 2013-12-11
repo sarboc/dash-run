@@ -1,7 +1,19 @@
 require 'spec_helper'
 
 describe Contributor do
-  let(:thing) { Thing.create }
+  let(:thing) do
+    thing = Thing.new
+    thing.admin_email = "sara@lafassett.com"
+    thing.admin_name = "Sara"
+    thing.time = Time.now
+    thing.square_cash_email = "sara@lafassett.com"
+    thing.venmo_id = "sarlaf"
+    thing.title = "Come to my party!"
+    thing.description = "It will be a super awesome party."
+    thing.min_contribution = 4
+    thing.save
+    thing
+  end
 
   let (:contributor) do
     contributor = Contributor.new(name: "Sara", email: "sara@lafassett.com", contribution: 5, note: "Awesome!")
@@ -28,6 +40,12 @@ describe Contributor do
     contributor.thing = thing
     contributor.save
     Contributor.all.count.should == 0
+  end
+
+  it "should raise an error for an invalid email address" do
+    contributor.email = "1234.com"
+    contributor.save
+    contributor.errors.messages[:email].should == ["#{ I18n.t "errors.invalid_email"}"]
   end
 
   it "should require contribution" do
@@ -61,6 +79,11 @@ describe Contributor do
   it "should recalculate total_contributions for its thing when saved" do
     contributor
     thing.reload.total_contributions.should == 5
+  end
+
+  it "should destroy any contributors if the thing is destroyed" do
+    thing.destroy
+    Contributor.all.count.should == 0
   end
 
 end
