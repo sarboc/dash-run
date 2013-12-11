@@ -12,7 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore-min.js
+//= require backbone.min.js
+//= require bootstrap.min.js
 //= require i18n
 //= require i18n/translations
-//= require_tree .
+//= require_tree ./app
+//= require_tree ./app/templates
+
+$ ->
+  App.start()
 
