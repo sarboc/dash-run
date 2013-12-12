@@ -4,16 +4,19 @@ window.App =
   Views: {}
 
   start: ->
-    page '/', ->
+    page "/", ->
       console.log "homepage"
 
-    page '/new', =>
+    page "/new", =>
       console.log "new"
       @newThing = new App.Views.NewThing
         app: @
       .render()
 
-    page '/a/:user', ->
+    page "/a/:key", ->
       console.log "admin page"
+
+    page "/p/:key", ->
+      console.log "public page"
 
     page()

@@ -3,4 +3,3 @@ class App.Views.NewThing extends App.View
   el: "#container"
 
   initialize: ({@app}) ->
-    console.log "I got created!"

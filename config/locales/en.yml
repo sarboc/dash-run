@@ -4,3 +4,21 @@
 en:
   errors:
     invalid_email: "Sorry. That's not a valid email address."
+  labels:
+    date: "Date"
+    description: "Description"
+    email: "Email"
+    name: "Name"
+    payment: "This info isn't required, but will make it easier for contributors to pay you."
+    square-cash: "Square Cash email"
+    submit: "Create a run"
+    time: "Time"
+    title: "Title"
+    venmo: "Venmo user name"
+  form-headings:
+    event: "Event information"
+    payment: "Your payment information"
+    personal: "Your information"
+
+
+
