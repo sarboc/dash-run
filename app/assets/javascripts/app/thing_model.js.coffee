@@ -1,4 +1,5 @@
 class App.Models.Thing extends Backbone.Model
   urlRoot: "/things"
+  idAttribute: "admin_url"
 
-  initialize: ({@admin_key})->
+  initialize: ()->

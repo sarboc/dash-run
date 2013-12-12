@@ -1,7 +1,7 @@
 DashRun::Application.routes.draw do
   root to: "application#index"
 
-  get "/things/:id", to: "things#show", as: :thing
+  get "/things/:admin_url", to: "things#show", as: :thing
   post "/things", to: "things#create"
   put "/things/:id", to: "things#update"
 

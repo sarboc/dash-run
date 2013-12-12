@@ -2,7 +2,9 @@ class ThingsController < ApplicationController
   respond_to :json
 
   def show
+    thing = Thing.find_by_admin_url(params[:admin_url])
 
+    respond_with thing, include: :contributors
   end
 
   def create
