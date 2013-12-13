@@ -1,4 +1,4 @@
-class App.Models.Thing extends Backbone.Model
+class App.Models.ThingAdmin extends Backbone.Model
   urlRoot: "/things"
   idAttribute: "admin_url"
 

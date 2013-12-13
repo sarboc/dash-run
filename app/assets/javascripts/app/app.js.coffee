@@ -17,7 +17,7 @@ window.App =
     page "/a/:key", (ctx) =>
       console.log "admin page"
 
-      @thing = new App.Models.Thing
+      @thing = new App.Models.ThingAdmin
       @thing.set "admin_url", ctx.params.key
       @thing.fetch().done =>
         console.log @thing

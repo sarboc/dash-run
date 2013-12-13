@@ -2,14 +2,18 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  app:
+    url: "wwww.dash-run.com"
   errors:
     invalid_email: "Sorry. That's not a valid email address."
   labels:
+    contribution: "Contribution"
     date: "Date"
     description: "Description"
     email: "Email"
     min-contribution: "Min contribution"
     name: "Name"
+    note: "Note"
     payment: "Payment info isn't required, but will make it easier for contributors to pay you."
     square-cash: "Square Cash email"
     submit: "Create a run"
@@ -19,6 +23,8 @@ en:
   form-headings:
     event: "Event information"
     personal: "Your information"
+  messages:
+    public-url: "This is the public url for your event. Pass it around so people can contribute!"
 
 
 

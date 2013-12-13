@@ -1,10 +1,12 @@
 <h2><%= @model.get "title" %></h2>
 <p><%= @model.get "description" %></p>
-<table>
+<p><a href="/p/<%= @model.get "public_url" %>"><%= I18n.t("app.url") %>/p/<%= @model.get "public_url" %></a></p>
+<a class="btn btn-primary" href="mailto:<% for contributor in @model.get "contributors": %><%= contributor.email %>,<% end %>?subject=<%= @model.get "title" %>">Email all contributors</a>
+<table class="table">
   <thead>
-    <th>Name</th>
-    <th>Contribution</th>
-    <th>Note</th>
+    <th><%= I18n.t("labels.name") %></th>
+    <th><%= I18n.t("labels.contribution") %></th>
+    <th><%= I18n.t("labels.note") %></th>
   </thead>
   <tbody>
     <% for contributor in (@model.get "contributors"): %>
@@ -15,3 +17,4 @@
       </tr>
     <% end %>
   </tbody>
+</table>
