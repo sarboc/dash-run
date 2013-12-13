@@ -1,1 +1,17 @@
-<h2>Thing!</h2>
+<h2><%= @model.get "title" %></h2>
+<p><%= @model.get "description" %></p>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Contribution</th>
+    <th>Note</th>
+  </thead>
+  <tbody>
+    <% for contributor in (@model.get "contributors"): %>
+      <tr>
+        <td><%= contributor.name %></td>
+        <td><%= contributor.contribution %></td>
+        <td><%= contributor.note %></td>
+      </tr>
+    <% end %>
+  </tbody>

@@ -1,4 +1,4 @@
-DashRun::Application.routes.draw do
+ThingContributor::Application.routes.draw do
   root to: "application#index"
 
   get "/things/:admin_url", to: "things#show", as: :thing

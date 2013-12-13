@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DashRun::Application.load_tasks
+ThingContributor::Application.load_tasks

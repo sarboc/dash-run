@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
   #   # end
   # end
 
+  before_filter :export_i18n_messages
+
+  def export_i18n_messages
+    DashRun::I18n.export! if Rails.env.development?
+  end
+
   def index
     render text: '', layout: true
   end
