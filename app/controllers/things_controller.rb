@@ -1,10 +1,15 @@
 class ThingsController < ApplicationController
   respond_to :json
 
-  def show
+  def show_admin
     thing = Thing.find_by_admin_url(params[:admin_url])
 
     respond_with thing, include: :contributors
+  end
+
+  def show_public
+    thing = Thing.find_by_public_url(params[:public_url])
+    respond_with thing, include: {contributors: {only: [:name]}}, only: [:id, :title, :description, :time, :admin_name, :square_cash_email, :venmo_id]
   end
 
   def create
