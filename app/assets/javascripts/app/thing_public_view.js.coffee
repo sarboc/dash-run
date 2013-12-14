@@ -10,12 +10,17 @@ class App.Views.ThingPublic extends App.View
 
   addContributor: (event) ->
     event.preventDefault()
+    name = $("#name").val()
+    email = $("#email").val()
+    contribution = parseInt $("#contribution").val()
+    note = $("#note").val()
     $.post "/contributors/#{ @model.get "public_url" }",
-      name: $("#name").val()
-      email: $("#email").val()
-      contribution: $("#contribution").val()
-      note: $("#note").val()
+      name: name
+      email: email
+      contribution: contribution
+      note: note
     .done =>
       (@model.get "contributors").push { name: $("#name").val() }
-      @model.trigger "change"
+      @model.set { total_contributions: (contribution + @model.get "total_contributions"), total_contributors: (1 + @model.get "total_contributors") }
+      # @model.trigger "change"
 
