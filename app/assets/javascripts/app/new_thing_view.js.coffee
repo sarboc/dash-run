@@ -9,7 +9,7 @@ class App.Views.NewThing extends App.View
 
   createThing: (event) ->
     event.preventDefault()
-    thingModel = new App.Models.Thing
+    thingModel = new App.Models.ThingAdmin
     thingModel.save
       admin_name: $("#admin-name").val()
       admin_email: $("#admin-email").val()

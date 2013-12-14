@@ -22,8 +22,9 @@ class ThingsController < ApplicationController
     thing.description = params[:description]
     thing.min_contribution = params[:min_contribution].to_i
     date = params[:date].to_datetime
+    thing.time = date
     time = params[:time].split ":"
-    thing.time = date.change({hour: time[0].to_i, min: time[1].to_i })
+    thing.time = thing.time.localtime.change({hour: time[0].to_i, min: time[1].to_i })
     thing.save
 
     respond_with thing

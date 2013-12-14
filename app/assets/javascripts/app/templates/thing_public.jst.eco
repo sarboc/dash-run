@@ -2,6 +2,9 @@
 <div class="row">
   <div class="col-sm-6">
     <p><%= @model.get "description" %></p>
+    <p><%= I18n.t("labels.deadline") %>:</p>
+    <p><%= moment(@model.get "time").utc().format("lll") %></p>
+    <p><%= @model.get "time" %></p>
     <p><%= I18n.t("messages.contributors") %><%= @model.get "total_contributors" %></p>
     <p><%= I18n.t("messages.contributions") %><%= @model.get "total_contributions" %></p>
     <% unless _.isEmpty(@model.get "contributors"): %>

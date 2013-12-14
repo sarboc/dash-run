@@ -18,6 +18,7 @@
 #= require page
 #= require i18n
 #= require i18n/translations
+#= require moment-with-langs.min.js
 #= require_tree ./app/templates
 #= require app/app
 #= require app/view
