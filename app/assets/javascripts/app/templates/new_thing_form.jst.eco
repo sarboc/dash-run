@@ -14,18 +14,18 @@
   </div>
   <span class="help-block"><%= I18n.t("labels.payment") %></span>
   <div class="form-group">
-    <label class="col-sm-3 control-label"><%= I18n.t("labels.venmo") %></label>
+    <label class="col-sm-3 control-label"><%= I18n.t("labels.venmo-id") %></label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="venmo-id" />
     </div>
   </div>
   <div class="form-group">
-    <label class="col-sm-3 control-label"><%= I18n.t("labels.square-cash") %></label>
+    <label class="col-sm-3 control-label"><%= I18n.t("labels.square-cash-email") %></label>
     <div class="col-sm-9">
       <input type="text" class="form-control" id="square-cash" />
     </div>
   </div>
-  <h2><small><%= I18n.t("form-headings.event") %></small></h2>
+  <h2><small><%= I18n.t("form-headings.thing") %></small></h2>
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.title") %></label>
     <div class="col-sm-9">

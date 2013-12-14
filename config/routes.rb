@@ -6,8 +6,8 @@ ThingContributor::Application.routes.draw do
   post "/things/a", to: "things#create"
   put "/things/:id", to: "things#update"
 
-  get "/contributors/:id", to: "contributors#show"
-  post "/contributors", to: "contributors#create"
+  get "/contributors", to: "contributors#show", as: :contributors
+  post "/contributors/:public_url", to: "contributors#create"
   # put "/contributors/:id", to: "contributors#update"
 
   match "*path", to: "application#index"

@@ -7,6 +7,9 @@ en:
   errors:
     invalid_email: "Sorry. That's not a valid email address."
   labels:
+    cash: "Cash"
+    contribute: "Contribute"
+    contributors: "Contributors"
     contribution: "Contribution"
     date: "Date"
     description: "Description"
@@ -14,16 +17,24 @@ en:
     min-contribution: "Min contribution"
     name: "Name"
     note: "Note"
+    pay: "Pay with"
     payment: "Payment info isn't required, but will make it easier for contributors to pay you."
-    square-cash: "Square Cash email"
+    square-cash: "Square Cash"
+    square-cash-email: "Square Cash email"
     submit: "Create a run"
     time: "Time"
     title: "Title"
-    venmo: "Venmo user name"
+    venmo: "Venmo"
+    venmo-id: "Venmo user name"
   form-headings:
-    event: "Event information"
+    contributor: "Contribute to the thing"
+    thing: "Event information"
     personal: "Your information"
   messages:
+    amount: "(put amount to contribute in the subject line)"
+    contributed: "Already contributed? Pay up!"
+    contributions: "Total contributions: $"
+    contributors: "Total contributors: "
     public-url: "This is the public url for your event. Pass it around so people can contribute!"
 
 
