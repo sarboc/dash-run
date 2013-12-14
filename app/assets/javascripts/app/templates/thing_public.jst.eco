@@ -2,11 +2,9 @@
 <div class="row">
   <div class="col-sm-6">
     <p><%= @model.get "description" %></p>
-    <p><%= I18n.t("labels.deadline") %>:</p>
-    <p><%= moment(@model.get "time").format("lll") %></p>
-    <p><%= @model.get "time" %></p>
-    <p><%= I18n.t("messages.contributors") %><%= @model.get "total_contributors" %></p>
-    <p><%= I18n.t("messages.contributions") %><%= @model.get "total_contributions" %></p>
+    <p><strong><%= I18n.t("labels.deadline") %>:</strong> <%= moment(@model.get "time").format("h:mm a [on] MMMM D, YYYY") %></p>
+    <p><strong><%= I18n.t("messages.contributors") %>:</strong> <%= @model.get "total_contributors" %></p>
+    <p><strong><%= I18n.t("messages.contributions") %>:</strong> <%= I18n.t("labels.currency") %><%= @model.get "total_contributions" %></p>
     <% unless _.isEmpty(@model.get "contributors"): %>
       <p><%= I18n.t("labels.contributors") %>:</p>
       <ol>
@@ -18,34 +16,38 @@
   </div>
   <div class="col-sm-6">
     <div class="well">
-      <form role="form" class="form">
-        <p><%= I18n.t("form-headings.contributor") %></p>
-        <div class="form-group">
-          <label class="control-label"><%= I18n.t("labels.name") %></label>
-          <input type="text" class="form-control" id="name" required />
-        </div>
-        <div class="form-group">
-          <label class="control-label"><%= I18n.t("labels.email") %></label>
-          <input type="email" class="form-control" id="email" required />
-        </div>
-        <div class="form-group">
-          <label class="control-label"><%= I18n.t("labels.contribution") %></label>
-          <input type="number" class="form-control" id="contribution" required />
-        </div>
-        <div class="form-group">
-          <label class="control-label"><%= I18n.t("labels.note") %></label>
-          <input type="text" class="form-control" id="note" />
-        </div>
-        <input type="submit" class="btn-block btn btn-primary" value="<%= I18n.t("labels.contribute") %>" />
-      </form>
+      <% if moment(@model.get "time").isAfter moment(): %>
+        <form role="form" class="form">
+          <p><%= I18n.t("form-headings.contributor") %></p>
+          <div class="form-group">
+            <label class="control-label"><%= I18n.t("labels.name") %></label>
+            <input type="text" class="form-control" id="name" required />
+          </div>
+          <div class="form-group">
+            <label class="control-label"><%= I18n.t("labels.email") %></label>
+            <input type="email" class="form-control" id="email" required />
+          </div>
+          <div class="form-group">
+            <label class="control-label"><%= I18n.t("labels.contribution") %></label>
+            <input type="number" class="form-control" id="contribution" required />
+          </div>
+          <div class="form-group">
+            <label class="control-label"><%= I18n.t("labels.note") %></label>
+            <input type="text" class="form-control" id="note" />
+          </div>
+          <input type="submit" class="btn-block btn btn-primary" value="<%= I18n.t("labels.contribute") %>" />
+        </form>
+      <% else: %>
+        <p><%= I18n.t("messages.deadline-passed") %></p>
+      <% end %>
     </div>
     <p><%= I18n.t("messages.contributed") %></p>
     <p><%= I18n.t("labels.pay") %> <%= I18n.t("labels.cash") %></p>
     <% unless _.isEmpty(@model.get "venmo_id"): %>
-      <p><a href="https://venmo.com/?txn=pay&recipients=<%= @model.get "venmo_id" %>&note=<%= @model.get "title" %>" ><%= I18n.t("labels.pay") %> <%= I18n.t("labels.venmo") %></a></p>
+      <p><a href="https://venmo.com/?txn=pay&recipients=<%= @model.get "venmo_id" %><%= if localStorage.last_contribution then "&amount=#{ localStorage.last_contribution }" %>&note=<%= @model.get "title" %>" target="_blank" ><%= I18n.t("labels.pay") %> <%= I18n.t("labels.venmo") %></a></p>
     <% end %>
     <% unless _.isEmpty(@model.get "square_cash_email"): %>
-      <p><a href="mailto:<%= @model.get "square_cash_email" %>?cc=cash@square.com&subject=<%= I18n.t("messages.amount") %>&body=<%= @model.get "title" %>" ><%= I18n.t("labels.pay") %> <%= I18n.t("labels.square-cash") %></a></p>
+      <p><a href="mailto:<%= @model.get "square_cash_email" %>?cc=cash@square.com&subject=<%= I18n.t("labels.currency") %><%= if localStorage.last_contribution then localStorage.last_contribution else I18n.t("messages.amount") %>&body=<%= @model.get "title" %>" target="_blank" ><%= I18n.t("labels.pay") %> <%= I18n.t("labels.square-cash") %></a></p>
     <% end %>
   </div>
 </div>

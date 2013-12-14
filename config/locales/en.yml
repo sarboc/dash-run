@@ -11,6 +11,7 @@ en:
     contribute: "Contribute"
     contributors: "Contributors"
     contribution: "Contribution"
+    currency: "$"
     date: "Date"
     deadline: "Deadline"
     description: "Description"
@@ -32,10 +33,11 @@ en:
     thing: "Event information"
     personal: "Your information"
   messages:
-    amount: "(put amount to contribute in the subject line)"
+    amount: "[dollar amount here]"
     contributed: "Already contributed? Pay up!"
-    contributions: "Total contributions: $"
-    contributors: "Total contributors: "
+    contributions: "Total contributions"
+    contributors: "Total contributors"
+    deadline-passed: "Sorry! The deadline to contribute to this thing has passed."
     public-url: "This is the public url for your event. Pass it around so people can contribute!"
 
 
