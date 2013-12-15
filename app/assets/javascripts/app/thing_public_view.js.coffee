@@ -42,7 +42,7 @@ class App.Views.ThingPublic extends App.View
 
   checkMinVal: () ->
     if @formData.contribution < (@model.get "min_contribution")
-      @errors.push I18n.t("errors.min-contribution")
+      @errors.push I18n.t("errors.min-contribution", currency: I18n.t("labels.currency"), amount: @model.get "min_contribution")
     @tallyErrors()
     # true
 

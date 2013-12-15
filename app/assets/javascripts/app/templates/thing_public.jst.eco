@@ -3,6 +3,7 @@
   <div class="col-sm-6">
     <p><%= @model.get "description" %></p>
     <p><strong><%= I18n.t("labels.deadline") %>:</strong> <%= moment(@model.get "time").format("h:mm a [on] MMMM D, YYYY") %></p>
+    <p><strong><%= I18n.t("messages.min-contribution") %>:</strong> <%= I18n.t("labels.currency") %><%= @model.get "min_contribution" %></p>
     <p><strong><%= I18n.t("messages.contributors") %>:</strong> <%= @model.get "total_contributors" %></p>
     <p><strong><%= I18n.t("messages.contributions") %>:</strong> <%= I18n.t("labels.currency") %><%= @model.get "total_contributions" %></p>
     <% unless _.isEmpty(@model.get "contributors"): %>
@@ -30,7 +31,7 @@
           </div>
           <div class="form-group">
             <label class="control-label"><%= I18n.t("labels.contribution") %></label>
-            <input type="number" class="form-control" id="contribution" min=<%= @model.get "min_contribution" %> required />
+            <input type="number" class="form-control" id="contribution"  required />
           </div>
           <div class="form-group">
             <label class="control-label"><%= I18n.t("labels.note") %></label>
