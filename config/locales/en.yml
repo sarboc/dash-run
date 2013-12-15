@@ -5,7 +5,9 @@ en:
   app:
     url: "wwww.dash-run.com"
   errors:
+    deadline: "Sorry. The deadline for this thing has passed."
     invalid_email: "Sorry. That's not a valid email address."
+    min-contribution: "Sorry! You need to enter a minimum contribution."
   labels:
     cash: "Cash"
     contribute: "Contribute"

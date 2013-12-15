@@ -18,6 +18,7 @@
     <div class="well">
       <% if moment(@model.get "time").isAfter moment(): %>
         <form role="form" class="form">
+          <p id="errors"></p>
           <p><%= I18n.t("form-headings.contributor") %></p>
           <div class="form-group">
             <label class="control-label"><%= I18n.t("labels.name") %></label>
