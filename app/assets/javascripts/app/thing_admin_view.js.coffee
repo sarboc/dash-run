@@ -3,7 +3,9 @@ class App.Views.ThingAdmin extends App.View
   el: "#container"
 
   initialize: ({@model, @app}) ->
+    @listenTo(@model, "change", @render)
+
     setInterval () =>
-      console.log "rendering"
-      @render()
+      @model.fetch()
     , 60000
+

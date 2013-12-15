@@ -24,7 +24,6 @@ class App.Views.ThingPublic extends App.View
         localStorage.last_contribution = contribution
         (@model.get "contributors").push { name: $("#name").val() }
         @model.set { total_contributions: (contribution + @model.get "total_contributions"), total_contributors: (1 + @model.get "total_contributors") }
-        # @model.trigger "change"
     else
       @render()
 
