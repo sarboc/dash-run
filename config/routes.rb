@@ -2,9 +2,10 @@ ThingContributor::Application.routes.draw do
   root to: "application#index"
 
   get "/things/a/:admin_url", to: "things#show_admin", as: :thing
-  get "/things/p/:public_url", to: "things#show_public"
   post "/things/a", to: "things#create"
-  put "/things/:id", to: "things#update"
+  put "/things/a/:admin_url", to: "things#update"
+
+  get "/things/p/:public_url", to: "things#show_public"
 
   get "/contributors", to: "contributors#show", as: :contributors
   post "/contributors/:public_url", to: "contributors#create"

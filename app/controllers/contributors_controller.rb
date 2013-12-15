@@ -18,7 +18,7 @@ class ContributorsController < ApplicationController
       contributor.save
     end
 
-    render :nothing => true, :status => 200
+    render nothing: true, :status => 200
   end
 
 end

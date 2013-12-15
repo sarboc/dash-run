@@ -11,8 +11,7 @@ class App.Views.ThingPublic extends App.View
 
   addContributor: ->
     if _.isEmpty @errors
-      $.post "/contributors/#{ @model.get "public_url" }", @formData
-      .done =>
+      $.post("/contributors/#{ @model.get "public_url" }", @formData).done =>
         localStorage.last_contribution = @formData.contribution
         (@model.get "contributors").push { name: $("#name").val() }
         @model.set { total_contributions: (@formData.contribution + @model.get "total_contributions"), total_contributors: (1 + @model.get "total_contributors") }

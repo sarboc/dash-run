@@ -29,6 +29,24 @@ class ThingsController < ApplicationController
   end
 
   def update
+    thing = Thing.find_by_admin_url(params[:admin_url])
+
+    if thing
+      thing.admin_name = params[:admin_name]
+      thing.admin_email = params[:admin_email]
+      thing.venmo_id = params[:venmo_id]
+      thing.square_cash_email = params[:square_cash_email]
+      thing.title = params[:title]
+      thing.description = params[:description]
+      thing.min_contribution = params[:min_contribution].to_i
+
+      thing.time = DateTime.parse("#{params[:date]} #{params[:time]}").change(offset: Time.now.zone)
+      thing.save
+
+      respond_with thing
+    else
+      render nothing: true
+    end
   end
 
 end

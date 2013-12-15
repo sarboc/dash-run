@@ -17,6 +17,7 @@ en:
     date: "Date"
     deadline: "Deadline"
     description: "Description"
+    edit: "Edit this run"
     email: "Email"
     min-contribution: "Min contribution"
     name: "Name"

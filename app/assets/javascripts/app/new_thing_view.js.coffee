@@ -2,15 +2,14 @@ class App.Views.NewThing extends App.View
   template: JST["app/templates/new_thing_form"]
   el: "#container"
 
-  initialize: ({@app}) ->
+  initialize: ({@app, @model, @buttonText}) ->
 
   events:
     "submit form": "createThing"
 
   createThing: (event) ->
     event.preventDefault()
-    thingModel = new App.Models.ThingAdmin
-    thingModel.save
+    @model.save
       admin_name: $("#admin-name").val()
       admin_email: $("#admin-email").val()
       venmo_id: $("#venmo-id").val()
@@ -20,5 +19,5 @@ class App.Views.NewThing extends App.View
       min_contribution: $("#min-contribution").val()
       date: $("#date").val()
       time: $("#time").val()
-    .done ->
-      page("/a/#{ thingModel.get "admin_url" }")
+    .done =>
+      page("/a/#{ @model.get "admin_url" }")
