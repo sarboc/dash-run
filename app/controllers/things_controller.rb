@@ -9,7 +9,7 @@ class ThingsController < ApplicationController
 
   def show_public
     thing = Thing.find_by_public_url(params[:public_url])
-    respond_with thing, include: {contributors: {only: [:name]}}, only: [:id, :title, :description, :time, :admin_name, :square_cash_email, :venmo_id, :total_contributors, :total_contributions]
+    respond_with thing, include: {contributors: {only: [:name]}}, only: [:id, :title, :description, :time, :admin_name, :square_cash_email, :venmo_id, :min_contribution, :total_contributors, :total_contributions]
   end
 
   def create
