@@ -3,6 +3,7 @@
 
 en:
   app:
+    name: "ThingContributor"
     url: "wwww.dash-run.com"
   errors:
     deadline: "Sorry. The deadline for this thing has passed."
