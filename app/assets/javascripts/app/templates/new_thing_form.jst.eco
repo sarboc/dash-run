@@ -1,3 +1,4 @@
+<h1 class="page-header text-center"><%= if @model.get "title" then @model.get "title" else I18n.t("form-headings.new") %></h1>
 <form role="form" class="form-horizontal" id="new-thing">
   <p id="errors"></p>
   <h2><small><%= I18n.t("form-headings.personal") %></small></h2>
@@ -23,7 +24,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.square-cash-email") %></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" id="square-cash" value="<%= @model.get "square_cash_email" %>" />
+      <input type="email" class="form-control" id="square-cash" value="<%= @model.get "square_cash_email" %>" />
     </div>
   </div>
   <h2><small><%= I18n.t("form-headings.thing") %></small></h2>

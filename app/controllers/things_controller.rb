@@ -41,7 +41,7 @@ class ThingsController < ApplicationController
       thing.min_contribution = params[:min_contribution].to_i
       # binding.pry
       # thing.time = DateTime.parse("#{params[:date]} #{params[:time]}").change(offset: Time.now.zone)
-      thing.time = DateTime.parse(params[:datetime])
+      thing.time = DateTime.parse(params[:time])
       thing.save
 
       respond_with thing

@@ -11,6 +11,7 @@ en:
     invalid_email: "Sorry. That's not a valid email address."
     min-contribution: "Sorry! The minimum contribution for this run is %{currency}%{amount}."
     past: "Please enter a date and time in the future."
+    required: "%{field} is required."
   labels:
     cash: "Cash"
     contribute: "Contribute"
@@ -36,8 +37,9 @@ en:
     venmo-id: "Venmo user name"
   form-headings:
     contributor: "Contribute to the thing"
-    thing: "Event information"
+    new: "Create a new thing"
     personal: "Your information"
+    thing: "Event information"
   messages:
     amount: "[dollar amount here]"
     contributed: "Already contributed? Pay up!"

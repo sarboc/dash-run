@@ -17,9 +17,7 @@ class App.Views.NewThing extends App.View
       title: $("#title").val()
       description: $("#description").val()
       min_contribution: $("#min-contribution").val()
-      datetime: moment("#{$("#date").val()} #{$("#time").val()}")
-      date: moment($("#date").val()).format("YYYY-MM-DD")
-      time: $("#time").val()
+      time: moment("#{$("#date").val()} #{$("#time").val()}")
 
     if @model.isValid()
       @model.save().done ->
