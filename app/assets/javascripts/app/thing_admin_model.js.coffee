@@ -7,13 +7,11 @@ class App.Models.ThingAdmin extends Backbone.Model
 
   validate: (attrs) ->
     @errors = []
-    console.log "I got validated"
-    console.log attrs.date
 
-    unless moment(attrs.time).isValid()
+    unless attrs.time.isValid()
       @errors.push I18n.t("errors.invalid-datetime")
 
-    unless moment(attrs.time).isAfter(moment())
+    unless attrs.time.isAfter(moment())
       @errors.push I18n.t("errors.past")
 
     unless attrs.admin_name
@@ -28,7 +26,12 @@ class App.Models.ThingAdmin extends Backbone.Model
     unless attrs.min_contribution
       @errors.push I18n.t("errors.required", field: I18n.t("labels.min-contribution"))
 
-    unless attrs.datetime
+    unless attrs.time
       @errors.push I18n.t("errors.required", field: I18n.t("labels.date"))
       @errors.push I18n.t("errors.required", field: I18n.t("labels.time"))
+
+    if _.isEmpty @errors
+      return
+    else
+      return @errors
 
