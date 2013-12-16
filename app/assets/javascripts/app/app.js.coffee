@@ -6,10 +6,10 @@ window.App =
   start: ->
     @thingModel
     page "/", ->
-      console.log "homepage"
+      @view = new App.Views.Homepage
+      @view.render()
 
     page "/new", =>
-      console.log "new"
       @thing = new App.Models.ThingAdmin
       @newThingView = new App.Views.NewThing
         app: @
@@ -18,7 +18,6 @@ window.App =
       .render()
 
     page "/edit/:url", (ctx) =>
-      console.log "edit"
       @thing = new App.Models.ThingAdmin
       @thing.set "admin_url", ctx.params.url
       @thing.fetch().done =>
@@ -29,7 +28,6 @@ window.App =
         .render()
 
     page "/a/:url", (ctx) =>
-      console.log "admin page"
       @thing = new App.Models.ThingAdmin
       @thing.set "admin_url", ctx.params.url
       @thing.fetch().done =>
@@ -39,7 +37,6 @@ window.App =
         .render()
 
     page "/p/:url", (ctx) =>
-      console.log "public page"
       @thing = new App.Models.ThingPublic
       @thing.set "public_url", ctx.params.url
       @thing.fetch().done =>
