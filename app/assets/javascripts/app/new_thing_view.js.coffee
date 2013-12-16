@@ -17,6 +17,7 @@ class App.Views.NewThing extends App.View
       title: $("#title").val()
       description: $("#description").val()
       min_contribution: $("#min-contribution").val()
+      datetime: moment("#{$("#date").val()} #{$("#time").val()}")
       date: moment($("#date").val()).format("YYYY-MM-DD")
       time: $("#time").val()
 
@@ -24,11 +25,10 @@ class App.Views.NewThing extends App.View
       @model.save().done ->
         page("/a/#{ @model.get "admin_url" }")
     else
-      console.log "errors!"
       $("#errors").addClass("alert alert-danger")
       $("#errors").empty()
       for error in @model.errors
-        $("#errors").append error
+        $("#errors").append "#{error} "
 
 
 

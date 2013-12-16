@@ -10,11 +10,9 @@ class App.Models.ThingAdmin extends Backbone.Model
     console.log "I got validated"
     console.log attrs.date
 
-    unless moment(attrs.date).isValid()
-      @errors.push I18n.t("errors.invalid-date")
+    unless moment(attrs.datetime).isValid()
+      @errors.push I18n.t("errors.invalid-datetime")
 
-    unless moment(attrs.time).isValid()
-      @errors.push I18n.t("errors.invalid-time")
-
-    # unless moment("#{attrs.date} #{attrs.time}").isAfter(moment())
+    unless moment(attrs.datetime).isAfter(moment())
+      @errors.push I18n.t("errors.past")
 

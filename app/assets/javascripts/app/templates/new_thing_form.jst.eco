@@ -48,13 +48,13 @@
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.date") %></label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" id="date" value="<%= moment(@model.get "time").format("YYYY-MM-DD") %>" required />
+      <input type="text" class="form-control" id="date" value="<%= moment(@model.get "time").format("MM/DD/YYYY") if @model.get "time" %>" placeholder="mm/dd/yyyy" required />
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.time") %></label>
     <div class="col-sm-9">
-      <input type="time" class="form-control" id="time" value="<%= moment(@model.get "time").format("HH:MM") %>" required />
+      <input type="text" class="form-control" id="time" value="<%= moment(@model.get "time").format("hh:mm a") if @model.get "time" %>" placeholder="hh:mm am" required />
     </div>
   </div>
   <input type="submit" class="btn-block btn btn-primary" value="<%= @buttonText %>" />
