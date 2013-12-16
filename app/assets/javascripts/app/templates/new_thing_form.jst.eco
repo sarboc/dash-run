@@ -1,4 +1,5 @@
 <form role="form" class="form-horizontal" id="new-thing">
+  <p id="errors"></p>
   <h2><small><%= I18n.t("form-headings.personal") %></small></h2>
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.name") %></label>
@@ -47,7 +48,7 @@
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.date") %></label>
     <div class="col-sm-9">
-      <input type="date" class="form-control" id="date" value="<%= moment(@model.get "time").format("YYYY-MM-DD") %>" required />
+      <input type="text" class="form-control" id="date" value="<%= moment(@model.get "time").format("YYYY-MM-DD") %>" required />
     </div>
   </div>
   <div class="form-group">

@@ -9,7 +9,7 @@ class App.Views.NewThing extends App.View
 
   createThing: (event) ->
     event.preventDefault()
-    @model.save
+    @model.set
       admin_name: $("#admin-name").val()
       admin_email: $("#admin-email").val()
       venmo_id: $("#venmo-id").val()
@@ -17,7 +17,19 @@ class App.Views.NewThing extends App.View
       title: $("#title").val()
       description: $("#description").val()
       min_contribution: $("#min-contribution").val()
-      date: $("#date").val()
+      date: moment($("#date").val()).format("YYYY-MM-DD")
       time: $("#time").val()
-    .done =>
-      page("/a/#{ @model.get "admin_url" }")
+
+    if @model.isValid()
+      @model.save().done ->
+        page("/a/#{ @model.get "admin_url" }")
+    else
+      console.log "errors!"
+      $("#errors").addClass("alert alert-danger")
+      $("#errors").empty()
+      for error in @model.errors
+        $("#errors").append error
+
+
+
+

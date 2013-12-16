@@ -8,4 +8,3 @@ class App.Views.ThingAdmin extends App.View
     setInterval () =>
       @model.fetch()
     , 60000
-

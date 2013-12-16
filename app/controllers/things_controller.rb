@@ -4,12 +4,12 @@ class ThingsController < ApplicationController
   def show_admin
     thing = Thing.find_by_admin_url(params[:admin_url])
 
-    respond_with thing, include: :contributors
+    respond_with thing, include: {contributors: {only: [:name, :contribution, :email, :note]}}, only: [:title, :description, :public_url, :time, :admin_name, :admin_email, :square_cash_email, :venmo_id, :min_contribution, :total_contributors, :total_contributions]
   end
 
   def show_public
     thing = Thing.find_by_public_url(params[:public_url])
-    respond_with thing, include: {contributors: {only: [:name]}}, only: [:id, :title, :description, :time, :admin_name, :square_cash_email, :venmo_id, :min_contribution, :total_contributors, :total_contributions]
+    respond_with thing, include: {contributors: {only: [:name]}}, only: [:title, :description, :time, :admin_name, :square_cash_email, :venmo_id, :min_contribution, :total_contributors, :total_contributions]
   end
 
   def create

@@ -6,6 +6,7 @@ en:
     url: "wwww.dash-run.com"
   errors:
     deadline: "Sorry. The deadline for this thing has passed."
+    invalid-date: "Sorry. That is not a valid date. Please enter a date in the format MM/DD/YYYY."
     invalid_email: "Sorry. That's not a valid email address."
     min-contribution: "Sorry! The minimum contribution for this run is %{currency}%{amount}."
   labels:

@@ -2,12 +2,13 @@
 <p><%= @model.get "description" %></p>
 <p><strong><%= I18n.t("labels.deadline") %>:</strong> <%= moment(@model.get "time").format("h:mm a [on] MMMM D, YYYY") %></p>
 <p><strong><%= I18n.t("messages.min-contribution") %>:</strong> <%= I18n.t("labels.currency") %><%= @model.get "min_contribution" %></p>
+<p><strong><%= I18n.t("messages.contributors") %>:</strong> <%= @model.get "total_contributors" %></p>
+<p><strong><%= I18n.t("messages.contributions") %>:</strong> <%= I18n.t("labels.currency") %><%= @model.get "total_contributions" %></p>
 <p><%= I18n.t("messages.public-url") %></p>
 <pre class="pre-scrollable">http://<%= I18n.t("app.url") %>/p/<%= @model.get "public_url" %></pre>
 <div class="row">
-  <p class="col-sm-4"><%= I18n.t("messages.contributors") %>: <%= @model.get "total_contributors" %></p>
-  <p class="col-sm-4"><%= I18n.t("messages.contributions") %>: <%= I18n.t("labels.currency") %><%= @model.get "total_contributions" %></p>
   <p class="col-sm-4"><a href="mailto:<% for contributor in @model.get "contributors": %><%= contributor.email %>,<% end %>?subject=<%= @model.get "title" %>">Email all contributors</a></p>
+  <p class="col-sm-4"><a id="edit" href="/edit/<%= @model.get "admin_url" %>"><%= I18n.t("labels.edit") %></a></p>
 </div>
 <table class="table">
   <thead>
