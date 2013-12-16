@@ -11,7 +11,7 @@ window.App =
 
     page "/new", =>
       @thing = new App.Models.ThingAdmin
-      @newThingView = new App.Views.NewThing
+      @newThingView = new App.Views.ThingForm
         app: @
         model: @thing
         buttonText: I18n.t("labels.submit")
@@ -21,7 +21,7 @@ window.App =
       @thing = new App.Models.ThingAdmin
       @thing.set "admin_url", ctx.params.url
       @thing.fetch().done =>
-        @thingView = new App.Views.NewThing
+        @thingView = new App.Views.ThingForm
           app: @
           model: @thing
           buttonText: I18n.t("labels.edit")

@@ -1,5 +1,5 @@
-class App.Views.NewThing extends App.View
-  template: JST["app/templates/new_thing_form"]
+class App.Views.ThingForm extends App.View
+  template: JST["app/templates/thing_form"]
   el: "#container"
 
   initialize: ({@app, @model, @buttonText}) ->
