@@ -8,10 +8,10 @@ class App.Models.ThingAdmin extends Backbone.Model
   validate: (attrs) ->
     @errors = []
 
-    unless attrs.time.isValid()
+    unless moment(attrs.time).isValid() or attrs.time.isValid()
       @errors.push I18n.t("errors.invalid-datetime")
 
-    unless attrs.time.isAfter(moment())
+    unless moment(attrs.time).isAfter moment() or attrs.time.isAfter moment()
       @errors.push I18n.t("errors.past")
 
     unless attrs.admin_name
