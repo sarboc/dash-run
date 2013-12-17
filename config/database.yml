@@ -15,8 +15,7 @@ test:
   pool: 5
   host: localhost
 
-# production:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: dash_run_words
-#   pool: 5
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: dash_run_words
