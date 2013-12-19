@@ -1,39 +1,26 @@
-<!-- <h1 class="page-header text-center">Sweet homepage</h1>
-<p>Fill in here with your desired homepage info</p> -->
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="<%= I18n.t "homepage.header-button-url" %>"><%= I18n.t "homepage.header-button" %> &raquo;</a></li>
+  </ul>
 
-<div class="business-header">
+</nav>
+<h1 class="page-header text-center">DashRun</h1>
 
-  <div class="container">
-
-    <div class="row">
-      <div class="col-lg-12">
-        <!-- The background image is set in the custom CSS -->
-        <h1 class="tagline"><%= I18n.t "homepage.tagline" %></h1>
-        <p><a href="<%= I18n.t "homepage.header-button-url" %>" class="btn btn-inverse btn-lg"><%= I18n.t "homepage.header-button" %> &raquo;</a></p>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="container">
-
-  <hr>
 
   <div class="row">
     <div class="col-sm-4">
-      <img class="img-circle img-responsive text-center" src="http://placehold.it/300x300">
+      <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-magic"></i></p></div>
         <h2><%= I18n.t "homepage.block1-head" %></h2>
         <p><%= I18n.t "homepage.block1-body" %></p>
     </div>
     <div class="col-sm-4">
-      <img class="img-circle img-responsive" src="http://placehold.it/300x300">
+      <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-money"></i></p></div>
         <h2><%= I18n.t "homepage.block2-head" %></h2>
         <p><%= I18n.t "homepage.block2-body" %></p>
     </div>
     <div class="col-sm-4">
-      <img class="img-circle img-responsive" src="http://placehold.it/300x300">
+      <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-smile-o"></i></p></div>
+      <!--<img class="img-circle img-responsive" src="http://placehold.it/300x300">-->
         <h2><%= I18n.t "homepage.block3-head" %></h2>
         <p><%= I18n.t "homepage.block3-body" %></p>
     </div>
@@ -69,5 +56,3 @@
       </div>
     </div>
   </footer>
-
-</div> <!-- /container -->
