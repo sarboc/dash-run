@@ -1,6 +1,6 @@
 <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <ul class="nav navbar-nav navbar-right">
-    <li><a href="<%= I18n.t "homepage.header-button-url" %>"><%= I18n.t "homepage.header-button" %> &raquo;</a></li>
+    <li><a href="<%= I18n.t("homepage.header-button-url") %>"><%= I18n.t("homepage.header-button") %> &raquo;</a></li>
   </ul>
 
 </nav>
@@ -10,19 +10,19 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-magic"></i></p></div>
-        <h2><%= I18n.t "homepage.block1-head" %></h2>
-        <p><%= I18n.t "homepage.block1-body" %></p>
+        <h2><%= I18n.t("homepage.block1-head") %></h2>
+        <p><%= I18n.t("homepage.block1-body") %></p>
     </div>
     <div class="col-sm-4">
       <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-money"></i></p></div>
-        <h2><%= I18n.t "homepage.block2-head" %></h2>
-        <p><%= I18n.t "homepage.block2-body" %></p>
+        <h2><%= I18n.t("homepage.block2-head") %></h2>
+        <p><%= I18n.t("homepage.block2-body") %></p>
     </div>
     <div class="col-sm-4">
       <div class="glyph-wrapper"><p class="text-center glyph-text"><i class="fa fa-smile-o"></i></p></div>
       <!--<img class="img-circle img-responsive" src="http://placehold.it/300x300">-->
-        <h2><%= I18n.t "homepage.block3-head" %></h2>
-        <p><%= I18n.t "homepage.block3-body" %></p>
+        <h2><%= I18n.t("homepage.block3-head") %></h2>
+        <p><%= I18n.t("homepage.block3-body") %></p>
     </div>
   </div>
 
@@ -30,19 +30,19 @@
 
   <div class="row">
     <div class="col-lg-8 col-sm-8">
-      <h2><%= I18n.t "homepage.main-text-head" %></h2>
-      <p><%= I18n.t "homepage.main-text-text" %></p>
-      <p><a class="btn btn-default btn-large" href="<%= I18n.t "homepage.main-text-button-url" %>"><%= I18n.t "homepage.main-text-button" %> &raquo;</a></p>
+      <h2><%= I18n.t("homepage.main-text-head") %></h2>
+      <p><%= I18n.t("homepage.main-text-text") %></p>
+      <p><a class="btn btn-default btn-large" href="<%= I18n.t("homepage.main-text-button-url") %>"><%= I18n.t("homepage.main-text-button") %> &raquo;</a></p>
     </div>
     <div class="col-lg-4 col-sm-4">
-      <h2><%= I18n.t "homepage.contact-head" %></h2>
+      <h2><%= I18n.t("homepage.contact-head") %></h2>
       <address>
-        <strong><%= I18n.t "app.company.name" %></strong><br>
-        <%= I18n.t "app.company.address" %>
+        <strong><%= I18n.t("app.company.name") %></strong><br>
+        <%= I18n.t("app.company.address") %>
       </address>
       <address>
-      <abbr title="Phone"><%= I18n.t "labels.abbreviations.phone" %>:</abbr> <%= I18n.t "app.company.phone" %><br>
-            <abbr title="Email"><%= I18n.t "labels.abbreviations.email" %>:</abbr> <a href="mailto:<%= I18n.t "app.company.email" %>"><%= I18n.t "app.company.email" %></a>
+      <abbr title="Phone"><%= I18n.t("labels.abbreviations.phone") %>:</abbr> <%= I18n.t("app.company.phone") %><br>
+            <abbr title="Email"><%= I18n.t("labels.abbreviations.email") %>:</abbr> <a href="mailto:<%= I18n.t("app.company.email") %>"><%= I18n.t("app.company.email") %></a>
       </address>
     </div>
   </div>
@@ -52,7 +52,7 @@
   <footer>
     <div class="row">
       <div class="col-lg-12">
-        <p><%= I18n.t "app.copyright" %></p>
+        <p><%= I18n.t("app.copyright") %></p>
       </div>
     </div>
   </footer>
