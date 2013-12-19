@@ -28,7 +28,7 @@ en:
     block3-head: "Be merry"
     contact-head: "Contact us"
     header-button: "Start a run"
-    header-button-url: "/url"
+    header-button-url: "/new"
     main-text-button: "Button text"
     main-text-button-url: "/new"
     main-text-head: "Title thing"
