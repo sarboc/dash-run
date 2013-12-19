@@ -3,6 +3,12 @@
 
 en:
   app:
+    company:
+      address: "1234 nowhere lane"
+      email: "sara@lafassett.com"
+      name: "Sara's bitchin company"
+      phone: "555-555-5555"
+    copyright: "none"
     name: "DashRun"
     url: "www.dashrun.co"
   errors:
@@ -13,7 +19,26 @@ en:
     min-contribution: "Sorry! The minimum contribution for this run is %{currency}%{amount}."
     past: "Please enter a date and time in the future."
     required: "%{field} is required."
+  homepage:
+    block1-body: "Create a new entry for your run with a title, description, and deadline. Include your venmo id and/or square cash email address to make it easy to get paid."
+    block1-head: "Set up your run"
+    block2-body: "Send the public url to your peeps. They can contribute to your run and pay you electronically."
+    block2-head: "Send out the link"
+    block3-body: "Keep tabs on contributions, collect the money, and buy your stuff."
+    block3-head: "Be merry"
+    contact-head: "Contact us"
+    header-button: "Start a run"
+    header-button-url: "/url"
+    main-text-button: "Button text"
+    main-text-button-url: "/new"
+    main-text-head: "Title thing"
+    main-text-text: "Paragraph stuff"
+    tagline: "Super sweet tagline"
+
   labels:
+    abbreviations:
+      email: "E"
+      phone: "P"
     cash: "Cash"
     contribute: "Contribute"
     contributors: "Contributors"

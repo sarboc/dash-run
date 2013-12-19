@@ -46,6 +46,7 @@
       <input type="number" class="form-control" id="min-contribution" value="<%= @model.get "min_contribution" %>" required />
     </div>
   </div>
+  <span class="help-block"><%= I18n.t("labels.deadline") %></span>
   <div class="form-group">
     <label class="col-sm-3 control-label"><%= I18n.t("labels.date") %></label>
     <div class="col-sm-9">

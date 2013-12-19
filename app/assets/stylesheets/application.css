@@ -9,12 +9,13 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
 
-
+ *= require bootstrap.min
+ *= require business-frontpage
  *= require_tree .
  *= require_self
  */
 
- #container {
+/* #container {
   width: 600px;
   margin: 20px auto;
- }
+ }*/
