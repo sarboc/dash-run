@@ -4,7 +4,7 @@
 en:
   app:
     name: "DashRun"
-    url: "www.dashrun.co"
+    url: "http://dashrun.herokuapp.com/"
   errors:
     deadline: "Sorry. The deadline for this thing has passed."
     invalid-datetime: "Sorry. That is not a valid date. Please enter a date in the format mm/dd/yyyy and a time in the format of hh:mm am/pm."
