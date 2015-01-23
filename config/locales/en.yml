@@ -29,10 +29,10 @@ en:
     contact-head: "Contact us"
     header-button: "Start a run"
     header-button-url: "/new"
-    main-text-button: "Button text"
+    main-text-button: "Start a run"
     main-text-button-url: "/new"
-    main-text-head: "Title thing"
-    main-text-text: "Paragraph stuff"
+    main-text-head: "Ready to create a new run?"
+    main-text-text: "You're just a click away."
     tagline: "Super sweet tagline"
 
   labels:
